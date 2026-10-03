@@ -1,0 +1,8 @@
+services:
+  sdp:
+    build: .
+    volumes:
+      - ./benchmarks/results:/work/benchmarks/results
+    environment:
+      - PYTHONPATH=/work/src
+    command: bash -lc "pytest -q tests && python experiments/run_all.py && python benchmarks/benchmark_suite.py"

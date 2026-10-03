@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Semiconductor Devices Principles — Reproducible PhD Benchmark</title>
+<meta name="description" content="PN → BJT → MOS → MOSFET → FinFET/GAA as executable, machine-checked benchmarks. One-command reproduce. Even a donkey can follow it.">
+<style>
+:root{--bg:#0b1020;--bg2:#111a33;--card:#16213f;--line:#2a3a63;--txt:#eef2ff;--mut:#a9b6d8;--acc:#6ee7ff;--acc2:#a78bfa;--ok:#34d399;--warn:#fbbf24}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--txt)}
+.wrap{max-width:1120px;margin:0 auto;padding:28px 20px 80px}
+.hero{background:radial-gradient(900px 320px at 20% 0%,#1e3a8a55,transparent),radial-gradient(700px 300px at 90% 10%,#6d28d955,transparent),linear-gradient(180deg,#0e1630,#0b1020);border:1px solid var(--line);border-radius:22px;padding:36px 32px}
+.eyebrow{letter-spacing:.18em;text-transform:uppercase;color:var(--acc);font-size:12px;font-weight:800}
+h1{font-size:40px;line-height:1.05;margin:10px 0 8px}h1 .grad{background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{font-size:18px;color:var(--txt);max-width:880px}.sub small{color:var(--mut)}
+.badges{margin:16px 0;display:flex;flex-wrap:wrap;gap:8px}.badges span{border:1px solid var(--line);background:#0e1830;border-radius:999px;padding:6px 12px;font-size:13px;color:var(--txt)}
+.badges b{color:var(--ok)}
+.cta{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}.btn{border:0;border-radius:12px;padding:12px 18px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.p{background:linear-gradient(90deg,#22d3ee,#818cf8);color:#06121f}.btn.g{background:#0e1830;color:var(--txt);border:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:18px}
+.card{background:linear-gradient(180deg,#141f3d,#101834);border:1px solid var(--line);border-radius:18px;padding:20px}
+.card h3{margin:0 0 8px;font-size:18px}.card p,.card li{color:#dbe4ff;font-size:15px;line-height:1.6}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px}
+.kpi div{background:#0d1530;border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center}
+.kpi b{font-size:22px;display:block}.kpi span{color:var(--mut);font-size:12px}
+h2{margin:40px 0 10px;font-size:26px}h2 small{color:var(--mut);font-weight:400}
+table{width:100%;border-collapse:collapse;background:#0d1530;border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:14px}
+th,td{padding:10px 12px;border-bottom:1px solid #22315c;text-align:left}th{background:#132046;color:var(--acc)}
+tr:last-child td{border-bottom:0}.pass{color:var(--ok);font-weight:800}
+pre{background:#070c1d;border:1px solid var(--line);border-radius:14px;padding:16px;overflow:auto;font-size:13.5px;line-height:1.55}
+code{color:#bdf3ff}.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.gallery figure{margin:0;background:#0d1530;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.gallery img{width:100%;display:block}.gallery figcaption{padding:10px 12px;font-size:13px;color:var(--mut)}
+.video{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#000}
+.video video,.video img{width:100%;display:block}
+.story li{margin:8px 0}.faq details{background:#0d1530;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0}
+.faq summary{cursor:pointer;font-weight:700}.note{border-left:4px solid var(--acc);background:#0d1530;padding:12px 16px;border-radius:0 12px 12px 0;color:#dbe4ff}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.toc a{color:var(--txt);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;background:#0e1830}
+footer{color:var(--mut);font-size:13px;margin-top:40px}
+@media(max-width:640px){h1{font-size:30px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero" id="top">
+<div class="eyebrow">MIT · Docker-reproducible · 8 tests + 13 benchmarks · All pass</div>
+<h1>Semiconductor Devices, <span class="grad">finally executable.</span></h1>
+<p class="sub"><b>CEO summary (30 seconds):</b> this repo turns the classic device course — diode → transistor → MOS → modern FinFET — into <b>one command that proves every number</b>. Students get intuition <i>with</i> proof. Engineers get copy-paste models for interviews and design reviews. Teachers get auto-graded labs. Managers get a portfolio artifact that runs the same on every machine.<br><small>Promise: if you can copy-paste 3 lines into a terminal, you can reproduce this entire page — even a donkey could do it (a very smart donkey with Docker).</small></p>
+<div class="badges"><span>pytest <b>8 passed</b></span><span>benchmarks <b>13 PASS</b></span><span>figures <b>7 regenerated</b></span><span>live market <b>verified</b></span><span>license <b>MIT</b></span><span>reproduce <b>docker compose up</b></span></div>
+<div class="cta"><a class="btn p" href="#quickstart">▶ Run it in 60 seconds</a><a class="btn g" href="#demo">🎬 Watch the demo</a><a class="btn g" href="#figures">📊 See the proof</a></div>
+<div class="toc"><a href="#donkey">🐴 Donkey-proof guide</a><a href="#features">✨ Features</a><a href="#stories">👥 User stories</a><a href="#numbers">📈 Verified numbers</a><a href="#hidden">💎 Hidden patterns</a><a href="#quickstart">🚀 Quickstart</a><a href="#map">🗺️ Course map</a><a href="#faq">❓ FAQ</a></div>
+</div>
+
+<div class="kpi">
+<div><b>0.7143 V</b><span>diode built-in voltage</span></div>
+<div><b>100.0</b><span>BJT current gain β</span></div>
+<div><b>83.34 mV/dec</b><span>MOSFET subthreshold swing</span></div>
+<div><b>2.08 yr</b><span>Moore doubling fit</span></div>
+<div><b>33.7%</b><span>solar ceiling (SQ)</span></div>
+<div><b>754×</b><span>FinFET/GAA leak win</span></div>
+</div>
+
+<h2 id="demo">🎬 Demo <small>— 60 seconds, no words needed</small></h2>
+<div class="video">
+<video controls muted loop playsinline preload="metadata" poster="../benchmarks/results/fig_mosfet_arch.png">
+<source src="demo.mp4" type="video/mp4">
+<img src="demo.gif" alt="Animated demo: diode, BJT, MOS, MOSFET, Moore, solar">
+</video>
+</div>
+<p class="note">On GitHub: <b>docs/demo.gif autoplays</b> in the README; <b>docs/demo.mp4</b> plays here with controls. Both are generated by <code>docs/make_demo.py</code> — delete them and re-run to prove it.</p>
+<p><img src="demo.gif" alt="demo gif preview" style="width:100%;border:1px solid #2a3a63;border-radius:14px"></p>
+
+<h2 id="donkey">🐴 Donkey-proof guide <small>— read this and you are a professional</small></h2>
+<div class="grid">
+<div class="card"><h3>🥕 1. Silicon is a shy conductor</h3><p>Pure silicon barely conducts. Sprinkle in a few foreign atoms (<b>doping</b>) and it wakes up: extra electrons (n-type) or missing electrons = holes (p-type). Everything else is just arranging these two crowds.</p></div>
+<div class="card"><h3>🚧 2. A diode is a one-way street</h3><p>Glue p-type to n-type → a wall (<b>0.71 V</b>) builds itself. Push forward and current explodes exponentially (<b>Shockley</b>). Pull back and almost nothing flows — plus a tiny capacitance. That is a solar cell in reverse and an LED forward.</p></div>
+<div class="card"><h3>🚰 3. A BJT is a faucet</h3><p>A thin base controls a huge collector flow: 1 unit in → <b>100 units</b> out (β). Two diodes back-to-back plus clever geometry. Still the king of analog muscle.</p></div>
+<div class="card"><h3>🪣 4. A MOS capacitor is a bucket</h3><p>Metal plate + oxide + silicon = a bucket for charge. Fill it (accumulation), empty the top (depletion → capacitance dips), overfill it (inversion → channel forms at <b>0.78 V</b>). Cameras (CCD/CMOS) are just buckets passing water down a line.</p></div>
+<div class="card"><h3>🚗 5. A MOSFET is a highway with a gate</h3><p>Source → drain highway, gate = toll barrier. Below threshold: trickle (subthreshold, <b>83 mV/dec</b>). Above: lanes open (linear) then traffic jam at the drain end (saturation, <b>2.33 mA</b> in our test). Short highways leak — unless you wrap the gate around 3 sides (<b>FinFET</b>) or all 4 (<b>GAA</b>): <b>754× less leak</b>.</p></div>
+<div class="card"><h3>📈 6. Scaling + sun = the plot twists</h3><p>Transistors doubled every <b>2.08 years</b> from 2,300 (1971) to 208 billion (2024). Voltage stopped shrinking, so we went parallel (multicore/GPU). Sunlight has a ceiling too: <b>33.7%</b> single-junction; today’s best silicon (26.7%) has 7 points left, and tandems (33.9%) already jumped over the fence.</p></div>
+</div>
+
+<h2 id="features">✨ Features <small>— everything in one box</small></h2>
+<div class="grid">
+<div class="card"><h3>📦 Executable physics core</h3><ul><li>Diode: Vbi, depletion width/edges, Shockley I-V, Cj/Cd, Schottky, ideality extraction</li><li>BJT: Ebers-Moll, Gummel, β roll-off, Early, fT</li><li>MOS: φF, Qdep, Vth, full C-V</li><li>MOSFET: Level-1 + subthreshold + DIBL + mobility + velocity saturation + planar/FinFET/GAA table</li><li>Scaling: Moore fit, Dennard, power wall · Opto: SQ table, NREL records, responsivity, solar J-V</li></ul></div>
+<div class="card"><h3>✅ Machine-checked benchmarks</h3><ul><li>13 gates (B1–B13) with JSON windows — suite exits non-zero on any drift</li><li>8 pytest tests mirroring the gates</li><li>7 figures regenerated from code, never pasted</li><li>Live-market leg re-fetches real prices, falls back to pinned snapshot offline</li></ul></div>
+<div class="card"><h3>🐳 One-command reproduce</h3><ul><li><code>docker compose up --build</code> = tests + figures + benchmarks</li><li>Pinned Python 3.12-slim image, no license servers</li><li><code>make repro</code> shortcut for laptops</li></ul></div>
+<div class="card"><h3>🎓 Course + career kit</h3><ul><li>Week-by-week syllabus map (§map) with file pointers</li><li>Interview-ready numbers (Vbi, β, Vth, SS, SQ, Moore)</li><li>Portfolio artifact: PAPER.md + results folder</li><li>MIT licensed — use in class, at work, in startups</li></ul></div>
+</div>
+
+<h2 id="stories">👥 User stories <small>— who is this for?</small></h2>
+<table><tr><th>You are…</th><th>Do this</th><th>You get</th></tr>
+<tr><td>🧑‍🎓 Student (zero background)</td><td>Read §donkey, run Quickstart, tweak doping in <code>pn_junction.py</code></td><td>Intuition + numbers for exams and labs</td></tr>
+<tr><td>👩‍🏫 Teacher / TA</td><td>Assign B1–B11 as auto-graded lab; require <code>summary.json: pass=true</code></td><td>Cheat-proof grading in one file</td></tr>
+<tr><td>💼 Job seeker (device / analog / PV / process)</td><td>Memorize KPI row + H1–H3; run arch comparison live in interview</td><td>“Show, don’t tell” portfolio moment</td></tr>
+<tr><td>🔧 Engineer (compact modeling)</td><td>Swap Level-1 for BSIM-CMG params; drop MESD JSON into <code>data/</code></td><td>Regression harness for model cards</td></tr>
+<tr><td>📊 Analyst / manager</td><td>Open §numbers + §hidden; quote Moore/SQ/market in roadmap slides</td><td>Board-ready facts with receipts</td></tr>
+<tr><td>🌞 Solar / sensor hacker</td><td>Extend SQ table + responsivity to your wavelength; compare to NREL CSV</td><td>Headroom math for techno-economics</td></tr>
+<tr><td>🤝 Contributor</td><td>Add B14 gate + test + figure; open PR with <code>summary.json</code></td><td>MIT credit + green CI</td></tr>
+</table>
+
+<h2 id="numbers">📈 Verified numbers <small>— every cell is suite output</small></h2>
+<table><tr><th>Gate</th><th>What it means (plain English)</th><th>Measured</th><th>Healthy range</th><th>Status</th></tr>
+<tr><td>B1</td><td>Diode wall voltage (Na=Nd=1e16)</td><td>0.7143 V</td><td>0.60–0.85</td><td class="pass">PASS</td></tr>
+<tr><td>B2</td><td>Diode leak when reverse-biased</td><td>7.21e-15 A</td><td>1e-16–1e-10</td><td class="pass">PASS</td></tr>
+<tr><td>B3</td><td>Ideality recovery (we hide n=1, code finds it)</td><td>1.000</td><td>0.95–1.05</td><td class="pass">PASS</td></tr>
+<tr><td>B4</td><td>Empty-zone width at 0 V</td><td>0.4298 µm</td><td>0.3–1.2</td><td class="pass">PASS</td></tr>
+<tr><td>B5</td><td>BJT faucet gain β</td><td>100.0</td><td>90–115</td><td class="pass">PASS</td></tr>
+<tr><td>B6</td><td>MOS bucket spill voltage</td><td>0.7848 V</td><td>0.4–1.2</td><td class="pass">PASS</td></tr>
+<tr><td>B7</td><td>MOSFET highway max current</td><td>2.334 mA</td><td>0.1–5 mA</td><td class="pass">PASS</td></tr>
+<tr><td>B8</td><td>Steepness of turn-on (lower = better)</td><td>83.34 mV/dec</td><td>80–90</td><td class="pass">PASS</td></tr>
+<tr><td>B9</td><td>Moore doubling speed 1971–2024</td><td>2.08 yr</td><td>1.5–3.0</td><td class="pass">PASS</td></tr>
+<tr><td>B10</td><td>Sunlight ceiling (best bandgap)</td><td>33.7%</td><td>32–35%</td><td class="pass">PASS</td></tr>
+<tr><td>B11</td><td>Sensor current per watt (850 nm)</td><td>0.6856 A/W</td><td>0.60–0.75</td><td class="pass">PASS</td></tr>
+<tr><td>B12/B13</td><td>Real chip stocks (2026-10-03)</td><td>NVDA 233.95 · TSM 472.78 USD</td><td>sane</td><td class="pass">PASS</td></tr>
+</table>
+
+<h2 id="hidden">💎 Hidden patterns <small>— the three things worth publishing</small></h2>
+<div class="grid">
+<div class="card"><h3>H1 · 754× leak win (electrostatics is exponential)</h3><p>Same L=20nm: SS 95.24 → 74.41 → 64.29 mV/dec; Ioff 1.375µA → 21.9nA → 1.82nA; Ion/Ioff 1.27e5 → 6.25e6 → 6.90e7. Wrapping the gate buys two orders of leakage for ~30% drive. That is a design rule, not a slogan.</p></div>
+<div class="card"><h3>H2 · Moore parallelized after Dennard died</h3><p>Doubling: all-years 2.08yr, pre-2006 2.05yr, post-2006 1.91yr. Voltage froze (power wall) but counts sped up via cores/GPUs/tiles (M1-Ultra 114B, Blackwell 208B). Re-fit from <code>data/moore_transistor_counts.csv</code> in one line.</p></div>
+<div class="card"><h3>H3 · Solar already hit the fence — then jumped it</h3><p>Records vs ceiling: Si 26.7/33.7 (7.0pp left), GaAs 29.1/32.8, perovskite 26.1/31.2; tandem 33.9% &gt; 33.7% peak. Single junctions are 4–7 points from done; the future is stacked. No fab needed to prove it.</p></div>
+</div>
+
+<h2 id="figures">📊 Proof gallery <small>— click any image; all regenerated from code</small></h2>
+<div class="gallery">
+<figure><img src="../benchmarks/results/fig_pn_iv.png" alt="diode I-V"><figcaption>Diode I-V: exponential wall, steeper = more ideal (n=1 best).</figcaption></figure>
+<figure><img src="../benchmarks/results/fig_bjt_gummel.png" alt="gummel"><figcaption>BJT Gummel: Ic/Ib rise together, ratio = β.</figcaption></figure>
+<figure><img src="../benchmarks/results/fig_mos_cv.png" alt="mos cv"><figcaption>MOS C-V: full bucket → dip (empty top) → minimum (channel).</figcaption></figure>
+<figure><img src="../benchmarks/results/fig_mosfet_arch.png" alt="arch"><figcaption>Planar vs FinFET vs GAA: same drive, wildly different leak.</figcaption></figure>
+<figure><img src="../benchmarks/results/fig_mosfet_output.png" alt="output"><figcaption>MOSFET output: linear (resistor) → saturation (current source).</figcaption></figure>
+<figure><img src="../benchmarks/results/fig_moore.png" alt="moore"><figcaption>Moore 1971–2024: 2,300 → 208,000,000,000.</figcaption></figure>
+<figure><img src="../benchmarks/results/fig_sq.png" alt="sq"><figcaption>Solar ceiling vs records: tandems beat the single-junction line.</figcaption></figure>
+</div>
+
+<h2 id="quickstart">🚀 Quickstart <small>— 3 lines, 60 seconds</small></h2>
+<pre><code>git clone &lt;this-repo&gt; &amp;&amp; cd semiconductor-devices-principles-phd-2026
+docker compose up --build
+# no docker?  pip install -r requirements.txt
+#   pytest -q tests  →  8 passed
+#   python experiments/run_all.py  →  7 figures
+#   PYTHONPATH=src python benchmarks/benchmark_suite.py  →  ALL PASS</code></pre>
+<div class="grid">
+<div class="card"><h3>Try 1 · Move the diode wall</h3><pre><code>PYTHONPATH=src python3 -c "
+from sdp.pn_junction import built_in_potential as Vbi
+print(Vbi(1e16,1e16))  # 0.7143
+print(Vbi(1e18,1e15))  # higher — why?
+"</code></pre></div>
+<div class="card"><h3>Try 2 · Feel the 754×</h3><pre><code>PYTHONPATH=src python3 -c "
+from sdp.mosfet import mosfet_ids as Id
+for n,d in [(1.6,.15),(1.25,.06),(1.08,.03)]:
+  print(float(Id(0.0,1.0,W_um=10,L_um=0.02,
+    tox_nm=1.0,mu0=300,Vth=0.35,n_sub=n,dibl=d)))
+"</code></pre></div>
+<div class="card"><h3>Try 3 · Touch real money</h3><pre><code>PYTHONPATH=src python3 -m sdp.live_verify
+# used_live=true when online; snapshot otherwise
+cat benchmarks/results/live_market.json</code></pre></div>
+</div>
+
+<h2 id="map">🗺️ Course map <small>— week → file → gate</small></h2>
+<table><tr><th>Week</th><th>Topic</th><th>Open this</th><th>Gate</th></tr>
+<tr><td>1</td><td>Intrinsic Si, ni(T)</td><td><code>src/sdp/constants.py</code></td><td>—</td></tr>
+<tr><td>2</td><td>Doping, PN wall, depletion</td><td><code>src/sdp/pn_junction.py</code></td><td>B1, B4</td></tr>
+<tr><td>3–4</td><td>Diode model + design (Cj/Cd)</td><td>same + <code>ideality_from_iv</code></td><td>B2, B3</td></tr>
+<tr><td>5</td><td>Photo / solar / LED / Schottky</td><td><code>src/sdp/opto.py</code></td><td>B10, B11</td></tr>
+<tr><td>6–7</td><td>BJT + switching model</td><td><code>src/sdp/bjt.py</code></td><td>B5</td></tr>
+<tr><td>MOS-1/2</td><td>Charges, Vth, C-V, CCD/CMOS camera</td><td><code>src/sdp/mos.py</code></td><td>B6</td></tr>
+<tr><td>MOS-3/4</td><td>MOSFET + corrections</td><td><code>src/sdp/mosfet.py</code></td><td>B7, B8</td></tr>
+<tr><td>MOS-5/6</td><td>Scaling, FinFET/GAA/2D</td><td><code>src/sdp/scaling.py</code> + arch table</td><td>B9, H1</td></tr>
+<tr><td>Live</td><td>Why scaling pays</td><td><code>src/sdp/live_verify.py</code></td><td>B12, B13</td></tr>
+</table>
+
+<h2 id="faq">❓ FAQ <small>— asked by real beginners</small></h2>
+<div class="faq">
+<details><summary>Do I need physics to use this?</summary><p>No. Start at §donkey. Copy the 3 quickstart lines. Change one number, re-run, watch the figure move. That is the whole method.</p></details>
+<details><summary>What if Docker is slow the first time?</summary><p>First build downloads Python + numpy (~2 min). After that it is seconds. No-Docker path works identically.</p></details>
+<details><summary>What if I have no internet?</summary><p>Everything except the live-price re-fetch works offline; the suite falls back to the pinned 2026-10-03 snapshot and still passes physics.</p></details>
+<details><summary>How do I prove I did the work?</summary><p>Attach <code>benchmarks/results/summary.json</code> (must say <code>"pass": true</code>) + one regenerated figure + <code>PAPER.md</code>. That is the credential.</p></details>
+<details><summary>How do I extend it?</summary><p>Add a <code>B14_*</code> window in <code>thresholds.json</code>, a test in <code>tests/</code>, and a figure in <code>experiments/run_all.py</code>. If the suite stays green, your claim is real.</p></details>
+<details><summary>License?</summary><p>MIT — use in homework, interviews, products. Keep the LICENSE file.</p></details>
+</div>
+
+<footer>Reproduce: <code>docker compose up --build</code> · Numbers = suite output, figures = code output · MIT · <a href="#top" style="color:#6ee7ff">back to top ↑</a></footer>
+</div>
+</body>
+</html>

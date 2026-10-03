@@ -1,0 +1,109 @@
+{
+  "pass": true,
+  "results": [
+    {
+      "name": "B1 Vbi(Na=Nd=1e16)",
+      "value": 0.7143171519879805,
+      "lo": 0.6,
+      "hi": 0.85,
+      "unit": "V",
+      "pass": true
+    },
+    {
+      "name": "B2 Is Si diode",
+      "value": 7.209794853e-15,
+      "lo": 1e-16,
+      "hi": 1e-10,
+      "unit": "A",
+      "pass": true
+    },
+    {
+      "name": "B3 ideality recovery n=1",
+      "value": 0.9999996478571359,
+      "lo": 0.95,
+      "hi": 1.05,
+      "unit": "",
+      "pass": true
+    },
+    {
+      "name": "B4 Wdep 1e16/1e16 0V",
+      "value": 0.4298210035433547,
+      "lo": 0.3,
+      "hi": 1.2,
+      "unit": "um",
+      "pass": true
+    },
+    {
+      "name": "B5 BJT betaF",
+      "value": 100.000000008962,
+      "lo": 90,
+      "hi": 115,
+      "unit": "",
+      "pass": true
+    },
+    {
+      "name": "B6 MOS Vth",
+      "value": 0.7848253632561089,
+      "lo": 0.4,
+      "hi": 1.2,
+      "unit": "V",
+      "pass": true
+    },
+    {
+      "name": "B7 MOSFET Idsat",
+      "value": 0.002334318074966592,
+      "lo": 0.0001,
+      "hi": 0.005,
+      "unit": "A",
+      "pass": true
+    },
+    {
+      "name": "B8 SS n=1.4",
+      "value": 83.33700106526442,
+      "lo": 80,
+      "hi": 90,
+      "unit": "mV/dec",
+      "pass": true
+    },
+    {
+      "name": "B9 Moore doubling years",
+      "value": 2.0805074995307966,
+      "lo": 1.5,
+      "hi": 3.0,
+      "unit": "yr",
+      "pass": true
+    },
+    {
+      "name": "B10 SQ peak",
+      "value": 0.337,
+      "lo": 0.32,
+      "hi": 0.35,
+      "unit": "",
+      "pass": true
+    },
+    {
+      "name": "B11 responsivity 850nm",
+      "value": 0.685571234674683,
+      "lo": 0.6,
+      "hi": 0.75,
+      "unit": "A/W",
+      "pass": true
+    },
+    {
+      "name": "B12 NVDA snapshot price",
+      "value": 233.95,
+      "lo": 100,
+      "hi": 500,
+      "unit": "USD",
+      "pass": true
+    },
+    {
+      "name": "B13 TSM snapshot price",
+      "value": 472.78,
+      "lo": 200,
+      "hi": 800,
+      "unit": "USD",
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "used_live": true,
+  "live": {
+    "NVDA": {
+      "current": 233.9499969482422,
+      "live": true
+    },
+    "TSM": {
+      "current": 472.7799987792969,
+      "live": true
+    },
+    "INTC": {
+      "current": 119.33000183105469,
+      "live": true
+    },
+    "AMD": {
+      "current": 633.9099731445312,
+      "live": true
+    },
+    "ASML": {
+      "current": 1867.31005859375,
+      "live": true
+    }
+  },
+  "snapshot": {
+    "retrieved_utc": "2026-10-03T10:26Z",
+    "NVDA": {
+      "current": 233.95,
+      "pct": 1.33847,
+      "mcap": 5649190617088,
+      "pe_ttm": 29.17082,
+      "source": "yfinance via agent-reach_stock_quote"
+    },
+    "TSM": {
+      "current": 472.78,
+      "pct": 2.95731,
+      "mcap": 2452061159424,
+      "pe_ttm": 35.334827,
+      "source": "yfinance via agent-reach_stock_quote"
+    },
+    "INTC_SEC": {
+      "rev_2024": 53101000000,
+      "net_2024": -18756000000,
+      "rev_2023": 54228000000,
+      "assets_2024": 196485000000,
+      "source": "SEC EDGAR 10-K via openresearch_get_company_financials"
+    },
+    "BSIM4": {
+      "version": "4.8.3",
+      "released": "2025-05-19",
+      "source": "https://bsim.berkeley.edu/models/bsim4/ fetched 2026-10-03"
+    }
+  }
+}
