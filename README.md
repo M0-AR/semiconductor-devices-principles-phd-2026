@@ -11,7 +11,7 @@
 ![license](https://img.shields.io/badge/license-MIT-green)
 ![docker](https://img.shields.io/badge/reproduce-docker_compose_up-9cf)
 
-[🚀 Quickstart](#-quickstart--3-lines-60-seconds) · [🎬 Demo](#-demo--watch-it-move) · [🐴 Donkey-proof guide](#-donkey-proof-guide--read-this-and-you-are-a-professional) · [📊 Proof](#-verified-numbers--every-cell-is-suite-output) · [🌐 Pretty page](docs/preview.html)
+[🚀 Quickstart](#-quickstart--3-lines-60-seconds) · [🎬 Demo](#-demo--watch-it-move) · [🌱 Beginner guide](#-beginner-guide--read-this-and-you-are-a-professional) · [📊 Proof](#-verified-numbers--every-cell-is-suite-output) · [🌐 Pretty page](docs/preview.html)
 
 </div>
 
@@ -21,7 +21,7 @@
 > Engineers get copy-paste device models for interviews and design reviews.
 > Teachers get auto-graded labs with a single PASS/FAIL file.
 > Managers get a portfolio artifact that runs identically on every machine.
-> If you can copy-paste 3 lines into a terminal, you can reproduce this entire repo — a donkey with Docker could do it.
+> If you can copy-paste 3 lines into a terminal, you can reproduce this entire repo — no background needed.
 > Open [`docs/preview.html`](docs/preview.html) for the beautiful version of this page, or press play below.
 
 ---
@@ -29,7 +29,7 @@
 ## 📑 Table of contents
 
 - [🎬 Demo — watch it move](#-demo--watch-it-move)
-- [🐴 Donkey-proof guide](#-donkey-proof-guide--read-this-and-you-are-a-professional)
+- [🌱 Beginner guide](#-beginner-guide--read-this-and-you-are-a-professional)
 - [✨ Features — everything in one box](#-features--everything-in-one-box)
 - [👥 User stories — who is this for](#-user-stories--who-is-this-for)
 - [🚀 Quickstart — 3 lines, 60 seconds](#-quickstart--3-lines-60-seconds)
@@ -68,16 +68,16 @@ python3 -m http.server 8000 --directory docs &
 
 ---
 
-## 🐴 Donkey-proof guide — read this and you are a professional
+## 🌱 Beginner guide — read this and you are a professional
 
 > You do **not** need physics. Read these 6 cartoons, then run the 3 quickstart lines. You will know more than most interview candidates.
 
-### 🥕 1. Silicon is a shy conductor
+### 🌱 1. Silicon is a shy conductor
 
 Pure silicon barely conducts electricity. Sprinkle in a few foreign atoms — this is called **doping** — and it wakes up:
 
-- **n-type** = extra free electrons (imagine extra hay bales).
-- **p-type** = missing electrons, called **holes** (imagine empty feeding spots).
+- **n-type** = extra free electrons (imagine extra marbles in a jar).
+- **p-type** = missing electrons, called **holes** (imagine empty slots in a tray).
 
 Everything in chips is just arranging these two crowds next to each other.
 
@@ -155,7 +155,7 @@ You now speak nano-CMOS. The tables below are the receipts.
 
 | You are… | Do this | You get |
 |---|---|---|
-| 🧑‍🎓 **Student, zero background** | Read the donkey guide, run Quickstart, change one doping number | Intuition + real numbers for exams and labs |
+| 🧑‍🎓 **Student, zero background** | Read the beginner guide, run Quickstart, change one doping number | Intuition + real numbers for exams and labs |
 | 👩‍🏫 **Teacher / TA** | Assign B1–B11 as auto-graded lab; require `summary.json: "pass": true` | Cheat-proof grading in one JSON file |
 | 💼 **Job seeker** (devices / analog / PV / process / modeling) | Memorize the 6 KPI numbers + H1–H3; demo the FinFET plot live | “Show, don’t tell” interview moment |
 | 🔧 **Engineer** (compact / TCAD / PDK) | Swap Level-1 for your model card; drop measured I-V/C-V into `data/`; add B14 | Regression harness for model reviews |
@@ -326,7 +326,7 @@ MIT — use in homework, interviews, products, startups. Keep the `LICENSE` file
 ## ❓ FAQ
 
 **Do I need physics?**
-No. Read the donkey guide, run Quickstart, change one number, re-run. That loop *is* the method.
+No. Read the beginner guide below, run Quickstart, change one number, re-run. That loop *is* the method.
 
 **What if Docker is slow the first time?**
 First build downloads Python + number libraries (~2 min). Afterwards it is seconds. The no-Docker path gives identical results.
