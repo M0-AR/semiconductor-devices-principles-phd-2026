@@ -1,5 +1,4 @@
 __pycache__/
 *.pyc
 .pytest_cache/
-benchmarks/results/*.png
-!benchmarks/results/.gitkeep
+# keep proof figures for GitHub README rendering
